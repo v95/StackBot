@@ -57,17 +57,14 @@ var bot = function(){
 	var _keydownChatCommand = function(a){
 		if(_isBotCommand && _isEnabled)
 		{
-			console.log("isCommand && isEnabled");
+			// get the proper keyCode as IE doesn't use a.which 
 			var code = (a.which) ? a.which : a.keyCode;
-			console.log("code = " + code);
 			if(code == 13)
 			{
-				console.log("preventing command...");
-				alert("Command blocked");
+				_processCommand($(_inputName).val());
 				a.preventDefault();
 				return;
 			}
-			console.log("running default...");
 			_keypressSendCommand(a);
 		}
 		else{
@@ -75,8 +72,19 @@ var bot = function(){
 		}
 	}
 	
+	// determine whether or not this is a bot command
 	var _isBotCommand = function(){
 		return $(_inputName).val().indexOf(_botPrefix) === 0;
+	}
+	
+	// handle the processing of the command
+	var _processCommand = function(cmd){
+	
+		// just echo to the console for now
+		console.log(_logPrefix + " processing command " + cmd);
+		
+		// clear the command once we are done
+		$(_inputName).val("");
 	}
 	
 	// print the status to the console
@@ -92,9 +100,10 @@ var bot = function(){
 	// return all the methods that we want to expose.
 	return {
 		init : _init,
+		isCommand: _isBotCommand,
 		on : _botOn,
 		off : _botOff,
-		isCommand: _isBotCommand,
+		processCommand : _processCommand,
 		status : _status,
 		test : _keypressSendCommand
 	}
