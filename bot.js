@@ -3,7 +3,7 @@ var bot = function(){
 	var _buttonName = "#sayit-button";
 	var _origialDefinition = $._data($(_buttonName).get(0), "events").click[0].handler;
 	
-	var _enabled = false;
+	var _isEnabled = false;
 
 	var _init = function(){
 		$(_buttonName).unbind('click'); 
@@ -11,9 +11,12 @@ var bot = function(){
 		alert('Test bot loaded');
 	};
 
+	var _enabled = function(value){
+		_isEnabled = value;
+	};
 
 	var test = function(){
-		if(this._enabled){
+		if(this._isEnabled){
 		    alert("hopefully i blocked the command...");
 			return;
 		}
@@ -23,6 +26,7 @@ var bot = function(){
 	// return all the methods that we want to expose.
 	return {
 		init : _init,
+		enabled : _enabled,
 		test : test
 	}
 
