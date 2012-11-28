@@ -58,7 +58,7 @@ var bot = function(){
 		if(_isBotCommand && _isEnabled)
 		{
 			console.log("isCommand && isEnabled");
-			if(a == 13 && !a.shiftKey)
+			if(a == 13)
 			{
 				console.log("preventing command...");
 				alert("Command blocked");
