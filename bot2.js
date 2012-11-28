@@ -5,8 +5,9 @@ var bot = function(){
 	var _buttonName = "#sayit-button";
 	var _inputName = "#input";
 	
-	// the prefix of the console messages
+	// the prefixs
 	var _logPrefix = "BOT ::";
+	var _botPrefix = "\";
 	
 	// the original definitions
 	var _buttonSendCommand = $._data($(_buttonName).get(0), "events").click[0].handler;
