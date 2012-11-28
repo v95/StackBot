@@ -57,11 +57,15 @@ var bot = function(){
 	var _keydownChatCommand = function(a){
 		if(_isBotCommand && _isEnabled)
 		{
+			console.log("isCommand && isEnabled");
 			if(a == 13 && !a.shiftKey)
 			{
+				console.log("preventing command...");
 				alert("Command blocked");
+				a.preventDefault();
 				return;
 			}
+			console.log("running default...");
 			_keypressSendCommand(a);
 		}
 		else{
