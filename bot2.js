@@ -62,7 +62,7 @@ var bot = function(){
 			}
 		}
 		else{
-			_keypressSendCommand(this);
+			_keypressSendCommand(k);
 		}
 	}
 	
