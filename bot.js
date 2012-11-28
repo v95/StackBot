@@ -20,8 +20,9 @@ var bot = function(){
 	};
 
 	var test = function(){
+		alert(_this.isEnabled);
 		if(this._isEnabled){
-		    alert("hopefully i blocked the command...");
+		    alert("Command blocked");
 			return;
 		}
 		_origialDefinition(this);
