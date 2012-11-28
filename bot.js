@@ -20,7 +20,7 @@ var bot = function(){
 	};
 
 	var test = function(){
-		alert(_this.isEnabled);
+		alert(this.isEnabled);
 		if(this._isEnabled){
 		    alert("Command blocked");
 			return;
