@@ -7,7 +7,7 @@ var bot = function(){
 	
 	// the prefixs
 	var _logPrefix = "BOT ::";
-	var _botPrefix = "\\";
+	var _botPrefix = "#";
 	
 	// the original definitions
 	var _buttonSendCommand = $._data($(_buttonName).get(0), "events").click[0].handler;
