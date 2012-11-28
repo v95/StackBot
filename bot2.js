@@ -54,17 +54,18 @@ var bot = function(){
 	}
 	
 	// Fires when the keydown event is fired
-	var _keydownChatCommand = function(k){
+	var _keydownChatCommand = function(a){
 		if(_isBotCommand && _isEnabled)
 		{
-			if(k == 13 && !k.shiftKey)
+			if(a == 13 && !a.shiftKey)
 			{
 				alert("Command blocked");
 				return;
 			}
+			_keypressSendCommand(a);
 		}
 		else{
-			_keypressSendCommand();
+			_keypressSendCommand(a);
 		}
 	}
 	
