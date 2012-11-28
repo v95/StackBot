@@ -1,6 +1,6 @@
 
 var bot = function(){
-	var  = "#sayit-button";
+	var _buttonName = "#sayit-button";
 	var _origialDefinition = $._data($(_buttonName).get(0), "events").click[0].handler;
 	
 	var _enabled = false;
