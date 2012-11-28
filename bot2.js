@@ -43,7 +43,7 @@ var bot = function(){
 
 	// 
 	var _buttonChatCommand = function(){
-		if(_isEnabled){
+		if(_isBotCommand && _isEnabled){
 		    alert("Command blocked");
 			return;
 		}
@@ -52,21 +52,21 @@ var bot = function(){
 	
 	// Fires when the keydown event is fired
 	var _keydownChatCommand = function(k){
-		if(k == 13 && !k.shiftKey)
+		if(_isBotCommand && _isEnabled)
 		{
-			if(_isEnabled)
+			if(k == 13 && !k.shiftKey)
 			{
-				if(_isEnabled){
-					alert("Command blocked");
-					return;
-				}
-				_keypressSendCommand(this);
+				alert("Command blocked");
+				return;
 			}
-			else{
-				_keypressSendCommand(this);
-			}
-			k.preventDefault();
 		}
+		else{
+			_keypressSendCommand(this);
+		}
+	}
+	
+	var _isBotCommand = function(){
+		return $(_inputName).text().indexOf(_botPrefix) === 0;
 	}
 	
 	// print the status to the console
