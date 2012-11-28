@@ -67,7 +67,7 @@ var bot = function(){
 	}
 	
 	var _isBotCommand = function(){
-		return $(_inputName).text().indexOf(_botPrefix) === 0;
+		return $(_inputName).val().indexOf(_botPrefix) === 0;
 	}
 	
 	// print the status to the console
