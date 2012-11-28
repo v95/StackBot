@@ -63,6 +63,7 @@ var bot = function(){
 		else{
 			_keypressSendCommand(this);
 		}
+		k.preventDefault();
 	}
 	
 	// print the status to the console
