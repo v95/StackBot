@@ -52,7 +52,7 @@ var bot = function(){
 	
 	// Fires when the keydown event is fired
 	var _keydownChatCommand = function(k){
-		if(_isEnabled && k == 13)
+		if(_isEnabled && (k == 13 && !k.shiftKey))
 		{
 			if(_isEnabled){
 				alert("Command blocked");
