@@ -12,16 +12,16 @@ var bot = function(){
 	};
 	
 	var _botOff = function(){
-		this._isEnabled = false;
+		_isEnabled = false;
 	};
 	
 	var _botOn = function(){
-		this._isEnabled = true;
+		_isEnabled = true;
 	};
 
 	var test = function(){
-		alert(this.isEnabled);
-		if(this._isEnabled){
+		alert(_isEnabled);
+		if(_isEnabled){
 		    alert("Command blocked");
 			return;
 		}
