@@ -64,7 +64,7 @@ var bot = function(){
 			}
 		}
 		else{
-			_keypressSendCommand(k);
+			_keypressSendCommand();
 		}
 	}
 	
@@ -87,8 +87,9 @@ var bot = function(){
 		init : _init,
 		on : _botOn,
 		off : _botOff,
-		isBotCommand: _isBotCommand,
-		status : _status
+		isCommand: _isBotCommand,
+		status : _status,
+		test : _keypressSendCommand
 	}
 
 }();
