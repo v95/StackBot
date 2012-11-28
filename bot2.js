@@ -85,6 +85,7 @@ var bot = function(){
 		init : _init,
 		on : _botOn,
 		off : _botOff,
+		isBotCommand: _isBotCommand,
 		status : _status
 	}
 
