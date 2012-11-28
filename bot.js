@@ -21,7 +21,7 @@ var bot = function(){
 	
 	// return all the methods that we want to expose.
 	return {
-		init : init
+		init : _init
 	}
 
 }();
