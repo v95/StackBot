@@ -116,8 +116,12 @@ var bot = function(){
 		// check to see if the command is in the dictionary
 		if(_commands[cmd])
 		{
+			console.log(_logPrefix + " command found");
 			// execute the command
 			_commands[cmd](args);
+		}
+		else{
+			console.log(_logPrefix + " command not found");
 		}
 		
 		return;
