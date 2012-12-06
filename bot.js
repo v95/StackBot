@@ -35,14 +35,12 @@ var bot = function(){
 	// so that i can turn the bot off 
 	var _botOff = function(){
 		_isEnabled = false;
-		//$._data($(_inputName).get(0), "events").keydown[1].handler = _keypressSendCommand;
 		_status();
 	};
 	
 	// so that i can turn the bot on 
 	var _botOn = function(){
 		_isEnabled = true;
-		//$._data($(_inputName).get(0), "events").keydown[1].handler = _keydownChatCommand;
 		_status();
 	};
 
@@ -67,10 +65,10 @@ var bot = function(){
 				a.preventDefault();
 				return;
 			}
-			_keypressSendCommand(a);
+			_keypressSendCommand(this);
 		}
 		else{
-			_keypressSendCommand(a);
+			_keypressSendCommand(this);
 		}
 	}
 	
@@ -116,7 +114,7 @@ var bot = function(){
 	}
 	
 	// to register a command
-	var _registerCommand = function(cmds, args, func){
+	var _registerCommand = function(cmds, func){
 		
 		return;
 	}
@@ -155,3 +153,4 @@ var bot = function(){
 
 // initalise the bot
 bot.init();
+bot.register("off", function() { bot.off(); });
