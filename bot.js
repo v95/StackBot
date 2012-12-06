@@ -125,6 +125,11 @@ var bot = function(){
 		return;
 	}
 	
+	var _enabled = function()
+	{
+		return _isEnabled;
+	}
+	
 	// print the status to the console
 	var _status = function(){
 		if(_isEnabled){
@@ -137,6 +142,7 @@ var bot = function(){
 	
 	// return all the methods that we want to expose.
 	return {
+		enabled : _enabled,
 		exec : _execCommand,
 		init : _init,
 		isCommand: _isBotCommand,
