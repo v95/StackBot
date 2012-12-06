@@ -1,4 +1,3 @@
-// $._data($("#sayit-button").get(0), "events").click[0].handler
 var bot = function(){
 	
 	// the id's of the elements on the page
@@ -36,14 +35,14 @@ var bot = function(){
 	// so that i can turn the bot off 
 	var _botOff = function(){
 		_isEnabled = false;
-		$._data($(_inputName).get(0), "events").keydown[1].handler = _keypressSendCommand;
+		//$._data($(_inputName).get(0), "events").keydown[1].handler = _keypressSendCommand;
 		_status();
 	};
 	
 	// so that i can turn the bot on 
 	var _botOn = function(){
 		_isEnabled = true;
-		$._data($(_inputName).get(0), "events").keydown[1].handler = _keydownChatCommand;
+		//$._data($(_inputName).get(0), "events").keydown[1].handler = _keydownChatCommand;
 		_status();
 	};
 
@@ -82,9 +81,6 @@ var bot = function(){
 	
 	// handle the processing of the command
 	var _processCommand = function(cmd){
-	
-		// just echo to the console for now
-		console.log(_logPrefix + " processing command '" + cmd + "'");
 		
 		// initial string split
 		var cmdAndArgs = cmd.split(" ");
@@ -105,23 +101,15 @@ var bot = function(){
 	}
 	
 	var _execCommand = function(cmd, args){
-		
-		// temp debug
-		console.log(_logPrefix + " executing command -> " + cmd);
-		for(var i = 0; i < args.length; i++){
-			console.log("    arg for command -> " + args[i]);
-		}
-		// end of temp debug		
 
 		// check to see if the command is in the dictionary
 		if(_commands[cmd])
 		{
-			console.log(_logPrefix + " command found");
 			// execute the command
 			_commands[cmd](args);
 		}
 		else{
-			console.log(_logPrefix + " command not found");
+			console.log(_logPrefix + " command not found -> " + cmd);
 		}
 		
 		return;
