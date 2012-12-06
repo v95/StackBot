@@ -87,7 +87,7 @@ var bot = function(){
 		console.log(_logPrefix + " processing command '" + cmd + "'");
 		
 		// initial string split
-		var cmdAndArgs = str.split(" ");
+		var cmdAndArgs = cmd.split(" ");
 		
 		// to store the args
 		var args = new Array();
