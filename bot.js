@@ -6,7 +6,7 @@ var bot = function(){
 	
 	// the prefixs
 	var _logPrefix = "BOT ::";
-	var _botPrefix = "#";
+	var _botPrefix = "$";
 	
 	// the original definitions
 	var _buttonSendCommand = $._data($(_buttonName).get(0), "events").click[0].handler;
@@ -142,7 +142,6 @@ var bot = function(){
 	
 	// return all the methods that we want to expose.
 	return {
-		enabled : _enabled,
 		exec : _execCommand,
 		init : _init,
 		isCommand : _isBotCommand,
@@ -159,4 +158,6 @@ var bot = function(){
 
 // initalise the bot
 bot.init();
+
+// register a default command
 bot.register("off", function() { bot.off(); });
