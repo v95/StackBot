@@ -59,7 +59,7 @@ var bot = function(){
 		{
 			// get the proper keyCode as IE doesn't use a.which 
 			var code = (a.which) ? a.which : a.keyCode;
-			if(code == 13)
+			if(code == 13 && !a.shiftKey)
 			{
 				_processCommand($(_inputName).val());
 				a.preventDefault();
@@ -81,7 +81,7 @@ var bot = function(){
 	var _processCommand = function(cmd){
 	
 		// just echo to the console for now
-		console.log(_logPrefix + " processing command " + cmd);
+		console.log(_logPrefix + " processing command '" + cmd + "'");
 		
 		// clear the command once we are done
 		$(_inputName).val("");
