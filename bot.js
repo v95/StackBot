@@ -46,7 +46,7 @@ var bot = function(){
 
 	// Fires when the user clicks send
 	var _buttonChatCommand = function(){
-		if(_isBotCommand && _isEnabled){
+		if(_isBotCommand() && _isEnabled){
 			_processCommand($(_inputName).val());
 			return;
 		}
@@ -55,7 +55,7 @@ var bot = function(){
 	
 	// Fires when the keydown event is fired
 	var _keydownChatCommand = function(a){
-		if(_isBotCommand && _isEnabled)
+		if(_isBotCommand() && _isEnabled)
 		{
 			// get the proper keyCode as IE doesn't use a.which 
 			var code = (a.which) ? a.which : a.keyCode;
@@ -145,7 +145,7 @@ var bot = function(){
 		enabled : _enabled,
 		exec : _execCommand,
 		init : _init,
-		isCommand: _isBotCommand,
+		isCommand : _isBotCommand,
 		on : _botOn,
 		off : _botOff,
 		processCommand : _processCommand,
