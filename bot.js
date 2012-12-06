@@ -93,7 +93,7 @@ var bot = function(){
 		var args = new Array();
 		
 		// rebuild the args array
-		for(int i = 1; i < cmdAndArgs.length; i++){
+		for(var i = 1; i < cmdAndArgs.length; i++){
 			args[i - 1] = cmdAndArgs[i];
 		}
 		
