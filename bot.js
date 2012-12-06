@@ -108,7 +108,7 @@ var bot = function(){
 		
 		// temp debug
 		console.log(_logPrefix + " executing command -> " + cmd);
-		for(int i = 0; i < args.length; i++){
+		for(var i = 0; i < args.length; i++){
 			console.log("    arg for command -> " + args[i]);
 		}
 		// end of temp debug		
