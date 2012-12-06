@@ -65,10 +65,10 @@ var bot = function(){
 				a.preventDefault();
 				return;
 			}
-			_keypressSendCommand(this);
+			_keypressSendCommand(a);
 		}
 		else{
-			_keypressSendCommand(this);
+			_keypressSendCommand(a);
 		}
 	}
 	
