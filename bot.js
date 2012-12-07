@@ -116,12 +116,30 @@ var bot = function(){
 	// to register a command
 	var _registerCommand = function(cmds, func){
 		
+		var arr = cmds.toLowerCase().split(",");
+		
+		for(var i = 0; i < arr.length; i++)
+		{
+			if(!_commands[arr[i]])
+			{
+				_commands[arr[i]] = func;
+			}
+			else{
+				console.log(_logPrefix + " cannot register command -> " + arr[i]);
+			}
+		}
+		
 		return;
 	}
 	
 	// to unregister a command
 	var _unregisterCommand = function(cmd){
 	
+		if(_commands[cmd.toLowerCase()])
+		{
+			_commands[cmd.toLowerCase()] = null;
+		}
+		
 		return;
 	}
 	
@@ -160,4 +178,4 @@ var bot = function(){
 bot.init();
 
 // register a default command
-bot.register("off", function() { bot.off(); });
+bot.register("off", function() { bot.off(); alert('fired'); });
