@@ -162,13 +162,10 @@ var bot = function(){
 	return {
 		exec : _execCommand,
 		init : _init,
-		isCommand : _isBotCommand,
 		on : _botOn,
 		off : _botOff,
-		processCommand : _processCommand,
 		register : _registerCommand,
 		status : _status,
-		test : _keypressSendCommand,
 		unregister : _unregisterCommand
 	}
 
@@ -178,4 +175,4 @@ var bot = function(){
 bot.init();
 
 // register a default command
-bot.register("off", function() { bot.off(); alert('fired'); });
+bot.register("off", function() { bot.off(); });
