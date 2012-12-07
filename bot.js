@@ -28,8 +28,6 @@ var bot = function(){
 		// now i have to handle the keydown event
 		$._data($(_inputName).get(0), "events").keydown[1].handler = _keydownChatCommand;
 		
-		// just to make sure the bot is loaded. I will get rid of this near the end.
-		alert('Test bot loaded');
 	};
 	
 	// so that i can turn the bot off 
