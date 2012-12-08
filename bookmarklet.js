@@ -1,1 +1,1 @@
-(function(){var a=document.createElement("script");a.src="https://raw.github.com/sblackler/StackBot/master/bot.js",document.head.appendChild(a)})()
+javascript: (function(){var a=document.createElement("script");a.src="https://raw.github.com/sblackler/StackBot/master/bot.js",document.head.appendChild(a);var b=document.createElement("script");b.src="https://raw.github.com/sblackler/StackBot/master/plugins/clear_deleted.js",document.head.appendChild(b)})()
